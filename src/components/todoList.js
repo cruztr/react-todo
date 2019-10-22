@@ -4,13 +4,10 @@ import './todoList.css';
 
 
 class todoList extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            input : "",
-            listItems : []
-        };
-    }
+    state = {
+        input : "",
+        listItems : []
+    };
 
     handleChange = (event) => {
         this.setState({input : event.target.value});

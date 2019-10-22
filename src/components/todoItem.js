@@ -6,7 +6,7 @@ class todoItem extends React.Component {
         return(
             <div>
                 <input type="checkbox"/>
-                <span>this.props.itemValue</span>
+                <span>{this.props.itemValue}</span>
             </div>
         );
     }

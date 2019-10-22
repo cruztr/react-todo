@@ -28,12 +28,9 @@ class todoList extends React.Component{
     renderListItems = () => {
         let listState = this.state.listItems;
 
-        listState.map((item) => {
+        return listState.map((item) => {
             return <TodoItem itemValue={item} />
         });
-
-        console.log('in method', listState);
-        return listState;
     };
 
     render() {
@@ -47,7 +44,6 @@ class todoList extends React.Component{
                 </button>
 
                <ul>
-                   <li>abd</li><li>abdasda</li>
                    {listItems}
                </ul>
 

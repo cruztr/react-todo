@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from './todoItem'
+import './todoList.css';
 
 
 class todoList extends React.Component{
@@ -44,9 +45,9 @@ class todoList extends React.Component{
                     Add item
                 </button>
 
-               <ul className="todos-ul">
+               <div className="todos-container">
                    {listItems}
-               </ul>
+               </div>
 
             </div>
         );

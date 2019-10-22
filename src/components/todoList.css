@@ -1,4 +1,18 @@
-.todos-ul {
-    list-style-type:none;
-    background-color: green;
+.todo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.todo button{
+    font-family: "Century Gothic";
+    font-size: medium;
+}
+
+.todos-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: "Century Gothic";
+    font-size: x-large;
 }

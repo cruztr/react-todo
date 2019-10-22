@@ -17,15 +17,17 @@ class todoList extends React.Component{
     };
 
     addTodoItem = () => {
-        if(this.state.input) {
-            this.setState(state => {
-                const updatedList = [...this.state.listItems, {value:this.state.input, isChecked:false}];
-                return {
-                    listItems: updatedList,
-                    input: ''
-                }
-            });
-        }
+        if(!this.state.input)
+            return;
+
+        this.setState(state => {
+            const updatedList = [...this.state.listItems, {value:this.state.input, isChecked:false}];
+            return {
+                listItems: updatedList,
+                input: ''
+            }
+        });
+
     };
 
     renderListItems = () => {
@@ -41,9 +43,7 @@ class todoList extends React.Component{
         return(
             <div className="todo">
                 <input type="text" value={this.state.input} onChange={this.handleChange} />
-                <button onClick={this.addTodoItem}>
-                    Add item
-                </button>
+                <button onClick={this.addTodoItem}>Add item</button>
 
                <div className="todos-container">
                    {listItems}

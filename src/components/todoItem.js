@@ -1,12 +1,13 @@
 import React from 'react';
+import './todoItem.css';
 
 
 class todoItem extends React.Component {
     render() {
         return(
             <div>
-                <input type="checkbox"/>
-                <span>{this.props.itemValue}</span>
+                <input type="checkbox" checked={this.props.isChecked}/>
+                <label>{this.props.itemValue}</label>
             </div>
         );
     }

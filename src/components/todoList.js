@@ -16,26 +16,27 @@ class todoList extends React.Component{
     };
 
     addTodoItem = () => {
-        this.setState(state => {
-            const list = [...this.state.listItems, this.state.input];
-            return {
-                listItems : list,
-                input : ''
-            }
-        });
+        if(this.state.input) {
+            this.setState(state => {
+                const updatedList = [...this.state.listItems, {value:this.state.input, isChecked:false}];
+                return {
+                    listItems: updatedList,
+                    input: ''
+                }
+            });
+        }
     };
 
     renderListItems = () => {
         let listState = this.state.listItems;
 
         return listState.map((item) => {
-            return <TodoItem itemValue={item} />
+            return <TodoItem itemValue={item.value} checked={item.isChecked}/>
         });
     };
 
     render() {
         let listItems = this.renderListItems();
-        console.log('in render ', listItems);
         return(
             <div className="todo">
                 <input type="text" value={this.state.input} onChange={this.handleChange} />
@@ -43,7 +44,7 @@ class todoList extends React.Component{
                     Add item
                 </button>
 
-               <ul>
+               <ul className="todos-ul">
                    {listItems}
                </ul>
 
